@@ -1,0 +1,56 @@
+<script setup lang="ts">
+const props = defineProps({
+  class: {
+    type: String,
+  },
+  layoutClass: {
+    type: String,
+  },
+})
+</script>
+
+<template>
+  <div class="slidev-layout two-cols-header w-full h-full" :class="layoutClass">
+    <div class="col-left-header">
+      <slot name="left-header" />
+    </div>
+    <div class="col-left" :class="props.class">
+      <slot name="left" />
+    </div>
+    <div class="col-right-header">
+      <slot name="right-header" />
+    </div>
+    <div class="col-right" :class="props.class">
+      <slot name="right" />
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.two-cols-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.col-left-header {
+  grid-area: 1 / 1 / 1 / 2;
+  @apply mb-4 h-s;
+}
+
+.col-right-header {
+  grid-area: 1 / 2 / 1 / 4;
+  @apply mb-4 h-s;
+}
+
+.col-left {
+  grid-area: 2 / 1 / 2 / 2;
+  @apply h-md ml-4;
+}
+
+
+.col-right {
+  grid-area: 2 / 2 / 2 / 4;
+  @apply h-md ml-4;
+}
+</style>
