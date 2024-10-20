@@ -27,7 +27,7 @@ const props = defineProps({
 .two-cols-header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 
 .col-header {
@@ -40,6 +40,6 @@ const props = defineProps({
 }
 .col-right {
   grid-area: 2 / 2 / 2 / 4;
-  @apply h-md ml-4;
+  @apply ml-4;
 }
 </style>
