@@ -33,7 +33,9 @@ const props = defineProps({
       <slot />
     </div>
     <div class="col-body" :class="props.class">
-      <slot name="body" />
+      <div class="h-full w-full overflow-auto custom-scrollbar">
+        <slot name="body" />
+      </div>
     </div>
   </div>
 </template>
@@ -41,16 +43,25 @@ const props = defineProps({
 <style scoped>
 .two-cols-header {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
 
 .col-header {
-  grid-area: 1 / 1 / 1 / 4;
+  grid-area: 1 / 1 / 1 / 1;
   @apply mb-4 h-s;
 }
 .col-body {
-  grid-area: 2 / 1 / 2 / 4;
+  grid-area: 2 / 1 / 2 / 1;
   @apply h-md ml-4;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.custom-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 </style>
