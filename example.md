@@ -84,7 +84,7 @@ class: "text-center"
 layout: header-with-one-column
 ---
 
-## Text Styling
+# Text Styling
 
 ::body::
 * **Bold**
@@ -93,42 +93,55 @@ layout: header-with-one-column
 * <a href="#">link</a>
 
 ---
+layout: header-with-one-column
+---
+
+# Header with One Column
+
+::body::
+
+* Nec nullam ligula convallis.
+* Iaculis vestibulum dolor nibh massa facilisi.
+* Lectus mattis quis sem et molestie nullam.
+* Pulvinar dui ultricies fermentum risus vitae.
+
+---
 layout: header-with-two-columns
 ---
 
-# Additional Stuff
+# Header with Two Columns
 
 ::left::
-* a
-* b
-* c
+* Massa metus odio orci primis nisi neque enim.
+* Litora ligula aliquet lacus.
+* Varius semper pellentesque sollicitudin at vivamus rutrum montes.
 
 ::right::
-1. one
-2. two
-3. three
+1. Ridiculus fermentum tristique per vulputate nisl.
+2. Felis mattis nec nisl luctus ipsum cursus.
+3. Nec montes bibendum cubilia adipiscing.
 
 ---
 layout: two-headers-with-two-columns
 ---
 
 ::left-header::
-## Example 1
+## Header 1
 
 ::left::
 
-* a
-* b
-* c
+* Ad consectetur elit volutpat maecenas egestas donec accumsan.
+* Fames curae viverra sagittis nam.
+* Nec accumsan dignissim facilisi.
 
 ::right-header::
-## Example 2
+## Header 2
 
 ::right::
 
-1. one
-2. two
-3. three
+1. Id hendrerit quis dapibus amet pellentesque.
+2. Eleifend donec mi cubilia imperdiet.
+3. Id class placerat vitae euismod maximus facilisi.
 
 ---
 layout: two-headers-with-two-header-columns
@@ -140,17 +153,17 @@ layout: two-headers-with-two-header-columns
 ## Left Subheader
 
 ::left::
-* a
-* b
-* c
+* Elit amet sollicitudin neque non.
+* Vivamus ante duis potenti penatibus ante hendrerit leo.
+* Felis urna arcu facilisi curabitur.
 
 ::right-header::
 ## Right Subheader
 
 ::right::
-1. one
-2. two
-3. three
+1. Vehicula nunc nulla erat sit pulvinar.
+2. Tempus nascetur suscipit pharetra convallis volutpat.
+3. Nulla varius integer pharetra class.
 
 ---
 layout: quote-with-image

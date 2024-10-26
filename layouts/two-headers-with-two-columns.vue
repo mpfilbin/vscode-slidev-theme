@@ -10,47 +10,29 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="slidev-layout two-cols-header w-full h-full" :class="layoutClass">
-    <div class="col-left-header">
-      <slot name="left-header" />
-    </div>
-    <div class="col-left" :class="props.class">
-      <slot name="left" />
-    </div>
-    <div class="col-right-header">
-      <slot name="right-header" />
-    </div>
-    <div class="col-right" :class="props.class">
-      <slot name="right" />
+  <div class="slidev-layout">
+    <div class="grid grid-cols-[repeat(2,1fr)] grid-row-[repeat(2,1fr) w-full h-full" :class="layoutClass">
+      <div class="grid-row-start-1 grid-row-end-1 grid-column-start-1 grid-column-end-1 mb-4 h-s">
+        <slot name="left-header"/>
+      </div>
+      <div class="grid-row-start-2 grid-row-end-2 grid-col-start-1 grid-col-end-1 h-md ml-4" :class="props.class">
+        <div class="h-full w-full custom-scrollbar overflow-auto">
+          <slot name="left"/>
+        </div>
+      </div>
+      <div class="grid-row-start-1 grid-row-end-1 grid-col-start-2 grid-col-end-2 mb-4 h-s">
+        <slot name="right-header"/>
+      </div>
+      <div class="grid-row-start-2 grid-row-end-2 grid-col-start-2 grid-col-end-2 h-md ml-4" :class="props.class">
+        <div class="h-full w-full overflow-auto custom-scrollbar">
+          <slot name="right"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
+
 <style scoped>
-.two-cols-header {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
 
-.col-left-header {
-  grid-area: 1 / 1 / 1 / 2;
-  @apply mb-4 h-s;
-}
-
-.col-right-header {
-  grid-area: 1 / 2 / 1 / 4;
-  @apply mb-4 h-s;
-}
-
-.col-left {
-  grid-area: 2 / 1 / 2 / 2;
-  @apply h-md ml-4;
-}
-
-
-.col-right {
-  grid-area: 2 / 2 / 2 / 4;
-  @apply h-md ml-4;
-}
 </style>

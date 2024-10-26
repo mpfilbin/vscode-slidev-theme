@@ -28,40 +28,17 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="slidev-layout two-cols-header w-full h-full" :class="layoutClass">
-    <div class="col-header">
+  <div class="slidev-layout">
+    <div class="w-full mb-4 h-s">
       <slot />
     </div>
-    <div class="col-body" :class="props.class">
-      <div class="h-full w-full overflow-auto custom-scrollbar">
-        <slot name="body" />
+    <div class="grid grid-cols-1 grid-rows-1 w-full h-full" :class="layoutClass">
+      <div class="grid-row-start-1 grid-row-end-1 grid-col-start-1 grid-row-end-1" :class="props.class">
+        <div class="h-md ml-4 overflow-auto custom-scrollbar">
+          <slot name="body" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.two-cols-header {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-
-.col-header {
-  grid-area: 1 / 1 / 1 / 1;
-  @apply mb-4 h-s;
-}
-.col-body {
-  grid-area: 2 / 1 / 2 / 1;
-  @apply h-md ml-4;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-.custom-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-</style>
